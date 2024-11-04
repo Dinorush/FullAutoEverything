@@ -2,9 +2,9 @@
 using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
 
-namespace ColorCrosshair
+namespace FullAutoEverything
 {
-    [BepInPlugin("Dinorush." + MODNAME, MODNAME, "1.0.0")]
+    [BepInPlugin("Dinorush." + MODNAME, MODNAME, "1.0.2")]
     internal sealed class EntryPoint : BasePlugin
     {
         public const string MODNAME = "FullAutoEverything";

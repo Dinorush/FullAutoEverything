@@ -1,18 +1,19 @@
 ﻿using Gear;
 using HarmonyLib;
 
-namespace ColorCrosshair
+namespace FullAutoEverything
 {
     [HarmonyPatch]
     internal static class WeaponPatch
     {
-        [HarmonyPatch(typeof(BulletWeapon), nameof(BulletWeapon.SetupArchetype))]
+        [HarmonyPatch(typeof(BWA_Burst), nameof(BWA_Burst.Setup))]
+        [HarmonyPatch(typeof(BWA_Semi), nameof(BWA_Semi.Setup))]
         [HarmonyPostfix]
         [HarmonyWrapSafe]
-        public static void Post_SetupArchetype(BulletWeapon __instance)
+        public static void Post_SetupArchetype(BulletWeaponArchetype __instance)
         {
-            if (__instance.m_archeType != null)
-                __instance.m_archeType.m_triggerNeedsPress = false;
+            if (__instance != null)
+                __instance.m_triggerNeedsPress = false;
         }
     }
 }
